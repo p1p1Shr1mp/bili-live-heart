@@ -101,7 +101,7 @@ class BiliUser:
             )
             logger.info("本脚本使用条件：必须关注A-SOUL五人B站账号!")
             tem = await WebApi.secret_player(self.session)
-            if tem:
+            if not tem:
                 message = f"本脚本使用条件：必须关注A-SOUL五人B站账号! 检测到你还没有关注：{'、'.join(tem)} ,请关注后再来使用"
                 logger.error(message)
                 self.message_err.append(message)
